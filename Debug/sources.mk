@@ -16,9 +16,9 @@ C_DEPS :=
 SUBDIRS := \
 src/PWM \
 src/SPI \
-src \
 src/Timer16_32 \
 src/UART \
+src \
 src/fatfs \
 src/wav \
 

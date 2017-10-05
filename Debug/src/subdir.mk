@@ -4,21 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/SoundEffectPlayer.c \
 ../src/cr_startup_lpc11xx.c \
 ../src/crp.c \
+../src/main.c \
 ../src/xprintf.c 
 
 OBJS += \
-./src/SoundEffectPlayer.o \
 ./src/cr_startup_lpc11xx.o \
 ./src/crp.o \
+./src/main.o \
 ./src/xprintf.o 
 
 C_DEPS += \
-./src/SoundEffectPlayer.d \
 ./src/cr_startup_lpc11xx.d \
 ./src/crp.d \
+./src/main.d \
 ./src/xprintf.d 
 
 

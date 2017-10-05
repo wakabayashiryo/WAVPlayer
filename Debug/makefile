@@ -29,25 +29,25 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: WAVPlayer.axf
+all: WAVplayer.axf
 
 # Tool invocations
-WAVPlayer.axf: $(OBJS) $(USER_OBJS)
+WAVplayer.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/home/evaota/LPCXpresso/workspace/CMSISv1p30_LPC11xx/Debug" -Xlinker -Map="WAVPlayer.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "WAVPlayer_Debug.ld" -o "WAVPlayer.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"/home/evaota/LPCXpresso/workspace/CMSISv1p30_LPC11xx/Debug" -Xlinker -Map="WAVplayer.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "WAVPlayer_Debug.ld" -o "WAVplayer.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) WAVPlayer.axf
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) WAVplayer.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "WAVPlayer.axf"; # arm-none-eabi-objcopy -v -O binary "WAVPlayer.axf" "WAVPlayer.bin" ; # checksum -p LPC1114FD_102 -d "WAVPlayer.bin";
+	-arm-none-eabi-size "WAVplayer.axf"; # arm-none-eabi-objcopy -v -O binary "WAVplayer.axf" "WAVplayer.bin" ; # checksum -p LPC1114FD_102 -d "WAVplayer.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents
